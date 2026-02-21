@@ -7,8 +7,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://chat-raiyhassanali3728-03ep74eq.leapcell.dev"],
+    credentials: true,
   },
+  transports: ["websocket", "polling"],
 });
 
 export function getReceiverSocketId(userId) {
